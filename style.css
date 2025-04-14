@@ -1,157 +1,146 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   min-height: 100vh;
-  background: linear-gradient(45deg, #0f0c29, #302b63);
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
 }
 
 .container {
-  width: 480px;
-  padding: 25px 30px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-}
-
-.container:hover {
-  transform: translateY(-5px);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: -30px 0 40px;
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
 }
 
 h1 span {
-  color: #4d6aff;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.container:hover h1 span {
-  border-color: #4d6aff;
+  color: #3dffc3;
 }
 
 textarea {
   width: 100%;
-  height: 150px;
-  background: #f5f5f5;
-  color: #333;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   font-size: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  outline: 0;
+  padding: 20px;
+  border-radius: 12px;
   resize: none;
-  margin-bottom: 20px;
-  transition: border-color 0.3s, background-color 0.3s;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
 }
 
-textarea:focus {
-  border-color: #4d6aff;
-  background-color: #ffffff;
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .row {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 select {
   flex: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  background: #f5f5f5;
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.3s;
-}
-
-select:hover {
-  border-color: #4d6aff;
+  min-width: 120px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  height: 50px;
+  padding: 0 20px;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button {
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: none;
-  font-weight: bold;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 0;
+  outline: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   transition: all 0.3s;
-}
-
-#playBtn {
-  background: #6c63ff;
-  color: white;
-}
-
-#pauseBtn {
-  background: #ffb347;
-  color: white;
-}
-
-#resumeBtn {
-  background: #48bb78;
-  color: white;
-}
-
-#stopBtn {
-  background: #f56565;
-  color: white;
+  white-space: nowrap;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 button:active {
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-#playBtn:hover {
-  background: #5a52d5;
-}
+#playBtn { background: #3498db; }
+#pauseBtn { background: #e67e22; }
+#resumeBtn { background: #2ecc71; }
+#stopBtn { background: #9b59b6; }
 
-#pauseBtn:hover {
-  background: #ffa324;
-}
+#playBtn:hover { background: #2980b9; }
+#pauseBtn:hover { background: #d35400; }
+#resumeBtn:hover { background: #27ae60; }
+#stopBtn:hover { background: #8e44ad; }
 
-#resumeBtn:hover {
-  background: #3da066;
-}
-
-#stopBtn:hover {
-  background: #e53e3e;
-}
-
-@media (max-width: 500px) {
-  .container {
-    width: 95%;
-    padding: 20px;
-  }
-  
+@media (max-width: 650px) {
   .row {
-    flex-direction: column;
+    gap: 8px;
   }
   
   button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  select, button {
     width: 100%;
-    margin-top: 5px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+  
+  textarea {
+    height: 200px;
   }
 }
